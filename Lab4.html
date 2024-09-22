@@ -1,0 +1,83 @@
+<html>
+    <!-- Title -->
+    <head>
+        <title>INST377 - Lab 4</title>
+        <link rel="stylesheet" href="Lab4c.css">
+    </head>
+    <!-- Header -->
+    <header>
+        <h1 id="h1">INST377 - Lab 4</h1>
+    </header>
+    
+    <body>
+               <!-- Name Section -->
+        <div class="container">
+            <section id="texttester">
+                <form onsubmit="return enterName()">
+                    <label>First Name</label>
+                    <input type="text" id="firstName">
+                    <button> Alert me!</button>
+                </form>
+            </section>
+            
+         <!-- Text Tester Section -->
+            <section id="texttester">
+                <form id="tbutton">
+                    <label for="text">Text Tester:</label>
+                    <input type="text" id="text" name="text">
+                    <button onclick="textValidation()">Validate Text</button>
+                </form>
+            </section> 
+        
+              <!-- Color Section -->
+              <section id="texttester">
+                <button onclick="changeColor()">Color</button>
+            </section> 
+
+            <!-- Add Text Section -->
+            <section id="texttester">
+                <button onclick="addText()">Add Text</button>
+            </section>
+        </div>
+    
+    <!-- Java Script -->
+    <script type="text/javascript">
+
+        //Entering Name
+        function enterName() {
+            var name = document.getElementById("firstName").value;
+            alert('Hello ' + name)
+        }
+            
+        
+        //Text Texter
+        function textValidation() {
+            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            var text = document.getElementById('text').value
+            if (validation.test(text)) {
+                    alert('Contains no special character (@#$%^&*()-_=+\|[]{};:/?.>)')
+                    return false;
+                }
+                return true;
+            }
+        
+        //Changing Color 
+        function changeColor() {
+            var body = document.querySelector('body');
+            if (document.querySelector('body').style.backgroundColor === "rgb(239, 177, 208)") {
+                body.style.backgroundColor = "white";
+            } else {
+                body.style.backgroundColor = "rgb(239, 177, 208)";
+            }
+        }
+
+        //Add Text
+        function addText() {
+            document.getElementById("h1").innerHTML+="Add Text";
+        }
+    </script>
+    </body>
+</html>
+
+
+    
